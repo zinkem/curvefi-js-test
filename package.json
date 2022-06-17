@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@curvefi/api": "github:james-hummingbot/curve-js#james-hummingbot/hummingbot"
+    "@curvefi/api": "^2.1.0"
   }
 }

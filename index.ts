@@ -1,9 +1,11 @@
+import fs from "fs"
 import curve from "@curvefi/api"
 import keys from "./config.json"
 
-console.log(keys);
+//console.log(keys);
 
-const PRO_ID : String = keys.project_secret;
+const PRO_ID : string = keys.project_id;
+console.log(PRO_ID);
 
 (async () => {
     // 1. Dev
@@ -12,7 +14,7 @@ const PRO_ID : String = keys.project_secret;
     // await curve.init('JsonRpc', {}, {}); // In this case JsonRpc url, privateKey, fee data and chainId will be specified automatically
 
     // 2. Infura
-    curve.init("Infura", { network: "homestead", apiKey: "PRO_ID" }, { chainId: 1 });
+    curve.init("Infura", { network: "homestead", apiKey: PRO_ID }, { chainId: 1 });
     
     // 3. Web3 provider
     // curve.init('Web3', { externalProvider: <WEB3_PROVIDER> }, { chainId: 1 });
