@@ -2,9 +2,8 @@ import fs from "fs"
 import curve from "@curvefi/api"
 import keys from "./config.json"
 
-//console.log(keys);
+const PRO_ID : string = process.env.INFURA_API_KEY || keys.project_id;
 
-const PRO_ID : string = keys.project_id;
 console.log(PRO_ID);
 
 (async () => {
@@ -18,8 +17,12 @@ console.log(PRO_ID);
     
     // 3. Web3 provider
     // curve.init('Web3', { externalProvider: <WEB3_PROVIDER> }, { chainId: 1 });
-    
+
+    console.log(curve.getPoolList());;
     // Fetch factory pools
-    await curve.fetchFactoryPools();
-    await curve.getCryptoFactoryPoolList();
+    let response = await curve.fetchFactoryPools();
+    console.log(response);
+    let response2 = await curve.getCryptoFactoryPoolList();
+    console.log(response2);
+
 })()
